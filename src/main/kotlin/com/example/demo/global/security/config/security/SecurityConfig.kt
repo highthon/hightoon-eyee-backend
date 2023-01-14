@@ -1,6 +1,5 @@
-package com.example.helloworld.global.security.config.security
-
-    import com.example.helloworld.global.config.filter.FilterConfig
+package com.example.demo.global.security.config.security
+import com.example.demo.global.config.filter.FilterConfig
 import com.example.helloworld.global.security.CustomAuthenticationEntryPoint
 import com.example.demo.global.security.jwt.JwtTokenProvider
 import com.fasterxml.jackson.databind.ObjectMapper
