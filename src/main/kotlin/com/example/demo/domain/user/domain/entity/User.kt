@@ -1,5 +1,7 @@
 package com.example.demo.domain.user.domain.entity
 
+import com.example.demo.domain.account.domain.entity.Account
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
 
 @Entity
@@ -12,7 +14,10 @@ class User(
     val password: String,
     val name: String,
     val image_url: String,
-    val refreshToken: String? = ""
+    val refreshToken: String? = "",
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    val account: List<Account>?
 ) {
     fun updateRefresh(refreshToken: String): User {
         val user: User = User(
@@ -20,7 +25,8 @@ class User(
             password = password,
             name = name,
             image_url = image_url,
-            refreshToken = refreshToken
+            refreshToken = refreshToken,
+            account = account
         )
         user.id = this.id
         return user

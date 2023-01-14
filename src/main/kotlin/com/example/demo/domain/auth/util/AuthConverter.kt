@@ -42,7 +42,8 @@ class AuthConverter {
             email = signup.email,
             password = encodePassword,
             name = signup.name,
-            image_url = ""
+            image_url = "",
+            account = null
         )
 
     fun toEntity(signup: Signup, encodePassword: String, imageUrl: String): User =
@@ -50,7 +51,8 @@ class AuthConverter {
             email = signup.email,
             password = encodePassword,
             name = signup.name,
-            image_url = "https://hehe-s3.s3.ap-northeast-2.amazonaws.com/$imageUrl"
+            image_url = "https://hehe-s3.s3.ap-northeast-2.amazonaws.com/$imageUrl",
+            account = null
         )
 
 }

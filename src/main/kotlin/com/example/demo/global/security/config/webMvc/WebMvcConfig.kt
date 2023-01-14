@@ -1,4 +1,4 @@
-package com.example.helloworld.global.security.config.webMvc
+package com.example.demo.global.security.config.webMvc
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.CorsRegistry
@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 class WebMvcConfig : WebMvcConfigurer {
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/**")
-            .allowedOrigins("*")
+            .allowedOrigins("*", "http://localhost:3000","http://localhost:3001")
             .allowedMethods("*")
             .allowedHeaders("*")
     }
