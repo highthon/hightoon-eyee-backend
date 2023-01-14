@@ -12,7 +12,8 @@ class ProductConverter {
     fun toDto(createProductRequest: CreateProductRequest): CreateProduct =
         CreateProduct(
             title = createProductRequest.title,
-            price = createProductRequest.price
+            price = createProductRequest.price,
+            category = createProductRequest.category
         )
 
     fun toDto(productId: Long): GetProduct =
@@ -23,14 +24,16 @@ class ProductConverter {
     fun toEntity(createProduct: CreateProduct): Product =
         Product(
             title = createProduct.title,
-            price = createProduct.price
+            price = createProduct.price,
+            category = createProduct.category
         )
 
     fun toResponse(product: Product): ProductResponse =
         ProductResponse(
             id = product.id,
             title = product.title,
-            price = product.price
+            price = product.price,
+            category = product.category
         )
 
 }

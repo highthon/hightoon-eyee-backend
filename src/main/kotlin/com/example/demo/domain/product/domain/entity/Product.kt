@@ -9,5 +9,6 @@ class Product(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0,
     val title: String,
-    val price: String
+    val price: String,
+    val category: String
 )
