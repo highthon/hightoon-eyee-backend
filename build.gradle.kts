@@ -32,7 +32,7 @@ dependencies {
 	runtimeOnly ("org.mariadb.jdbc:mariadb-java-client:3.0.6")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
-	implementation ("org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE")
+	implementation("org.springframework.cloud:spring-cloud-starter-aws:2.1.4.RELEASE")
 }
 
 tasks.withType<KotlinCompile> {

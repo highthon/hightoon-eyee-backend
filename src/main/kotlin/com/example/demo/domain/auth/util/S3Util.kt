@@ -3,9 +3,7 @@ package com.example.demo.domain.auth.util
 import com.amazonaws.services.s3.AmazonS3
 import com.amazonaws.services.s3.model.ObjectMetadata
 import com.example.demo.domain.auth.exception.BusinessException
-import com.example.demo.global.config.s3.AmazonS3Properties
 import org.slf4j.LoggerFactory
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import org.springframework.web.multipart.MultipartFile
 import java.util.*
