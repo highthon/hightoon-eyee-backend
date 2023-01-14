@@ -47,6 +47,8 @@ class SecurityConfig(
             .antMatchers(HttpMethod.GET, "/account").authenticated()
 
             .antMatchers(HttpMethod.GET, "/product").authenticated()
+            .antMatchers(HttpMethod.GET, "/product/{post_id}").authenticated()
+            .antMatchers(HttpMethod.POST, "/product").authenticated()
 
             .anyRequest().denyAll()
             .and()

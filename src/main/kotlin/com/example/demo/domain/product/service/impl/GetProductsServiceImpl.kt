@@ -3,13 +3,13 @@ package com.example.demo.domain.product.service.impl
 import com.example.demo.domain.product.domain.repository.ProductRepository
 import com.example.demo.domain.product.presentation.data.response.ProductListResponse
 import com.example.demo.domain.product.presentation.data.response.ProductResponse
-import com.example.demo.domain.product.service.GetProducts
+import com.example.demo.domain.product.service.GetProductsService
 import org.springframework.stereotype.Service
 
 @Service
-class GetProductsImpl(
+class GetProductsServiceImpl(
     private val productRepository: ProductRepository
-) : GetProducts {
+) : GetProductsService {
     override fun execute(): ProductListResponse =
         ProductListResponse(
             products = productRepository.findAll()
