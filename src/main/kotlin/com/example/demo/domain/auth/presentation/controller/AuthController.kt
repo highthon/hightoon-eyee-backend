@@ -25,7 +25,7 @@ class AuthController(
     @PostMapping("signup")
     fun signup(
         @RequestPart(value = "files", required = false) multipartFile: MultipartFile?,
-        @Valid @RequestPart(value = "signupRequest") signupRequest: SignupRequest
+        @RequestPart(value = "signupRequest") signupRequest: SignupRequest
     ): ResponseEntity<Void> =
         authConverter.toDto(signupRequest)
             .let { signupService.execute(it, multipartFile) }
