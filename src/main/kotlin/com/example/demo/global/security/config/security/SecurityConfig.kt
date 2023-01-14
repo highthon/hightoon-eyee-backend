@@ -1,4 +1,5 @@
 package com.example.demo.global.security.config.security
+
 import com.example.demo.global.config.filter.FilterConfig
 import com.example.demo.global.security.CustomAuthenticationEntryPoint
 import com.example.demo.global.security.jwt.JwtTokenProvider
@@ -44,6 +45,8 @@ class SecurityConfig(
 
             .antMatchers(HttpMethod.POST, "/account").authenticated()
             .antMatchers(HttpMethod.GET, "/account").authenticated()
+
+            .antMatchers(HttpMethod.GET, "/product").authenticated()
 
             .anyRequest().denyAll()
             .and()
