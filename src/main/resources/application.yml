@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://sihundb/kopling?serverTimezone=Asia/Seoul
+    username: root
+    password: 12345678
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  messages:
+    basename: i18n/exception
+    encoding: UTF-8
+
+jwt:
+  accessSecret: TVNHdGVhbXRvb2szJEAjIQ==123412341234
+  refreshSecret: RGNVNSDJAdDVhbGRvb2HzJEAjIQ==123412341234
+
+cloud:
+  aws:
+    credentials:
+      accessKey: AKIA5ZJB4XHAD4ZCNTZ6
+      secretKey: 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
+    s3:
+      bucket: hehe-s3
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
