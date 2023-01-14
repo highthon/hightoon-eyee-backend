@@ -14,8 +14,7 @@ import java.util.*
 class S3Util(
     private val amazonS3: AmazonS3,
 ) {
-
-    var BUCKET: String = "hehe-s3"
+    val bucket: String = "hehe-s3"
 
     private val log get() = LoggerFactory.getLogger(this::class.java)
 
@@ -25,7 +24,7 @@ class S3Util(
             fileName = UUID.randomUUID().toString()
             val metadata = ObjectMetadata()
             metadata.contentLength = multipartFile!!.size
-            amazonS3.putObject(BUCKET, fileName, multipartFile.inputStream, metadata)
+            amazonS3.putObject(bucket, fileName, multipartFile.inputStream, metadata)
         } catch (e: Exception) {
             throw BusinessException()
         }
