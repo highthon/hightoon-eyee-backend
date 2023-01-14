@@ -15,8 +15,7 @@ class S3Util(
     private val amazonS3: AmazonS3,
 ) {
 
-    @Value("\${cloud.aws.s3.bucket}")
-    var BUCKET: String? = ""
+    var BUCKET: String = "hehe-s3"
 
     private val log get() = LoggerFactory.getLogger(this::class.java)
 
