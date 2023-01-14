@@ -1,6 +1,6 @@
 package com.example.demo.global.security.config.security
 import com.example.demo.global.config.filter.FilterConfig
-import com.example.helloworld.global.security.CustomAuthenticationEntryPoint
+import com.example.demo.global.security.CustomAuthenticationEntryPoint
 import com.example.demo.global.security.jwt.JwtTokenProvider
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.context.annotation.Bean
@@ -42,15 +42,8 @@ class SecurityConfig(
             .antMatchers(HttpMethod.DELETE, "/auth").authenticated()
             .antMatchers(HttpMethod.POST, "/auth/signup").permitAll()
 
-            .antMatchers(HttpMethod.GET, "/email/authentication").permitAll()
-            .antMatchers(HttpMethod.POST, "/email").permitAll()
-
-            .antMatchers(HttpMethod.POST, "/posting").authenticated()
-            .antMatchers(HttpMethod.GET, "/posting").authenticated()
-            .antMatchers(HttpMethod.GET, "/posting/list").authenticated()
-            .antMatchers(HttpMethod.GET, "/posting/{postid}").authenticated()
-
-            .antMatchers(HttpMethod.GET, "/posting").hasRole("USER")
+            .antMatchers(HttpMethod.POST, "/account").authenticated()
+            .antMatchers(HttpMethod.GET, "/account").authenticated()
 
             .anyRequest().denyAll()
             .and()

@@ -13,6 +13,7 @@ class Account(
     var id: Long = 0,
     val title: String,
     val description: String,
+    val category: String,
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")

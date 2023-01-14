@@ -11,13 +11,17 @@ class AccountConverter {
     fun toDto(createAccountRequest: CreateAccountRequest): CreateAccount =
         CreateAccount(
             title = createAccountRequest.title,
-            description = createAccountRequest.description
+            description = createAccountRequest.description,
+            category = createAccountRequest.category
         )
+
 
     fun toEntity(createAccount: CreateAccount, user: User): Account =
         Account(
             title = createAccount.title,
             description = createAccount.description,
+            category = createAccount.category,
             user = user
         )
+
 }

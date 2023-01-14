@@ -1,5 +1,4 @@
-package com.example.helloworld.global.security
-
+package com.example.demo.global.security
 import com.example.demo.global.error.ErrorCode
 import com.example.demo.global.error.ErrorResponse
 import com.fasterxml.jackson.databind.ObjectMapper
